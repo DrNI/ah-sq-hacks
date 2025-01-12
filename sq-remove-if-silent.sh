@@ -9,7 +9,7 @@
 #  USE WITH CARE! NEVER USE WITHOUT BACKUP!
 #
 # sq-remove-if-silent.sh
-# Copyright 2023 Niels Ott https://www.niels-ott.de
+# Copyright 2023-2025 Niels Ott https://www.niels-ott.de
 # 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,6 +24,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+
+if [ ! $(which sox) ] ; then
+    echo "error: sox not found."
+    exit 1
+fi
 
 
 IN="$1"
